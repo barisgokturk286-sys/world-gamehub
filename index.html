@@ -5,130 +5,239 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#10071f">
-<title>WORLD_GAMEHUB</title>
+<title>Barisin_Hesaplari</title>
+
 <style>
-*{box-sizing:border-box}
-body{
- margin:0;color:#f5f1ff;
- font-family:Arial,sans-serif;
- background:radial-gradient(ellipse at top,#35105c,#0a0b17 65%);
- min-height:100vh
+* {
+  box-sizing: border-box;
 }
-header,main,footer{max-width:950px;margin:auto;padding:22px}
-nav{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.logo{font-weight:900;color:#c9a0ff;font-size:19px}
-a{color:inherit;text-decoration:none}
-button,.btn{
- background:#241339;border:1px solid #6942a0;
- border-radius:14px;padding:12px 16px;color:white;
- font-size:14px;cursor:pointer;display:inline-block
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #f5f1ff;
+  background: radial-gradient(
+    ellipse at top,
+    #35105c 0%,
+    #100b1d 48%,
+    #090a14 100%
+  );
 }
-.hero{text-align:center;padding:55px 0 35px}
-.gamepad{font-size:55px;margin-bottom:12px}
-h1{font-size:clamp(28px,7vw,48px);margin:10px 0}
-.hero p{color:#c3b8d5;line-height:1.7}
-.pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.card{
- background:#171426;border:1px solid #38304c;
- border-radius:20px;padding:20px;margin-bottom:15px
+
+header, main, footer {
+  max-width: 900px;
+  margin: auto;
+  padding: 22px;
 }
-.card h2{font-size:19px;margin-top:0}
-.card p{color:#bcb4cc;line-height:1.6;font-size:14px}
-.game{display:flex;align-items:center;justify-content:space-between;gap:10px;
- padding:14px;margin-top:10px;background:#211d31;
- border-radius:13px;border:1px solid #353047}
-.game span{font-size:14px}
-section{margin-bottom:28px}
-footer{text-align:center;color:#948aa7;font-size:13px;padding-bottom:35px}
-@media(max-width:600px){
- header,main,footer{padding:17px}
- .grid{grid-template-columns:1fr}
- .hero{padding-top:38px}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  color: #d0a5ff;
+  font-weight: 900;
+  font-size: 19px;
+  overflow-wrap: anywhere;
+}
+
+.status {
+  color: #b9a7d1;
+  font-size: 12px;
+  border: 1px solid #49305f;
+  padding: 8px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.hero {
+  text-align: center;
+  padding: 65px 0 38px;
+}
+
+.avatar {
+  width: 94px;
+  height: 94px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  font-size: 45px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #7929c7, #263caa);
+  box-shadow: 0 0 38px #8034c555;
+}
+
+h1 {
+  font-size: clamp(27px, 7vw, 43px);
+  margin: 22px 0 12px;
+  overflow-wrap: anywhere;
+}
+
+.hero p {
+  color: #c4b8d6;
+  line-height: 1.7;
+}
+
+.socials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 25px 0 40px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 105px;
+  padding: 20px;
+  text-decoration: none;
+  color: white;
+  background: #171426;
+  border: 1px solid #39304d;
+  border-radius: 20px;
+  transition: transform .2s, border-color .2s,
+              box-shadow .2s;
+}
+
+.social:hover {
+  transform: translateY(-4px);
+  border-color: #a56bfa;
+  box-shadow: 0 8px 28px #8b35ff20;
+}
+
+.symbol {
+  width: 49px;
+  height: 49px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+  border-radius: 15px;
+  background: #292039;
+}
+
+.name {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.desc {
+  color: #aaa0bd;
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+.arrow {
+  margin-left: auto;
+  color: #c8a3ff;
+  font-size: 20px;
+}
+
+footer {
+  text-align: center;
+  padding-bottom: 30px;
+  color: #857895;
+  font-size: 12px;
+}
+
+@media (max-width: 520px) {
+  header, main, footer {
+    padding: 17px;
+  }
+
+  .hero {
+    padding-top: 48px;
+  }
+
+  .socials {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .social {
+    min-height: 90px;
+  }
 }
 </style>
 </head>
+
 <body>
+
 <header>
-<nav>
-<div class="logo">🎮 WORLD_GAMEHUB</div>
-<button onclick="toggleLang()" id="lang">🇹🇷 Türkçe</button>
-</nav>
+  <nav>
+    <div class="logo">✦ Barisin_Hesaplari</div>
+    <div class="status">● Sosyal Hesaplar</div>
+  </nav>
 </header>
 
 <main>
-<div class="hero">
-<div class="gamepad">🎮</div>
-<h1>WORLD_GAMEHUB</h1>
-<p id="subtitle">Oyunlar, scriptler ve topluluk bağlantılarımız</p>
-<div class="pills">
-<a class="btn" href="#oyunlar">🎯 Oyunlar</a>
-<a class="btn" href="#topluluk">🌐 Topluluk</a>
-<a class="btn" href="#hakkimizda">ℹ️ Hakkımızda</a>
-</div>
-</div>
+  <section class="hero">
+    <div class="avatar">👑</div>
+    <h1>Barisin_Hesaplari</h1>
+    <p>
+      Bütün sosyal medya hesaplarım<br>
+      tek bir yerde.
+    </p>
+  </section>
 
-<section id="oyunlar">
-<h2 id="gamesTitle">🎮 Oyun Bölümleri</h2>
-<div class="grid">
-<div class="card">
-<h2>🟥 Roblox</h2>
-<p>Roblox topluluğu, rehberler ve oyun içerikleri.</p>
-<a class="btn" href="#topluluk">İncele ↗</a>
-</div>
-<div class="card">
-<h2>🚘 Car Parking</h2>
-<p>Araçlar, sürüş içerikleri ve oyun rehberleri.</p>
-<a class="btn" href="#topluluk">İncele ↗</a>
-</div>
-<div class="card">
-<h2>⛏️ Minecraft</h2>
-<p>Modlar, sunucular ve hayatta kalma rehberleri.</p>
-<a class="btn" href="#topluluk">İncele ↗</a>
-</div>
-</div>
-</section>
+  <section class="socials">
 
-<section id="topluluk" class="card">
-<h2>🌐 Topluluğumuza Katıl</h2>
-<p>Oyun topluluklarımızı ve sosyal medya hesaplarımızı burada bulabilirsin.</p>
-<a class="game" href="https://telegram.org/" target="_blank" rel="noopener">
-<span>✈️ Telegram</span><span>↗</span>
-</a>
-<a class="game" href="https://www.tiktok.com/" target="_blank" rel="noopener">
-<span>🎵 TikTok</span><span>↗</span>
-</a>
-<a class="game" href="https://www.youtube.com/" target="_blank" rel="noopener">
-<span>▶️ YouTube</span><span>↗</span>
-</a>
-<a class="game" href="https://discord.com/" target="_blank" rel="noopener">
-<span>💬 Discord</span><span>↗</span>
-</a>
-</section>
+    <a class="social"
+       href="https://www.tiktok.com/"
+       target="_blank" rel="noopener">
+      <div class="symbol">♪</div>
+      <div>
+        <div class="name">TikTok</div>
+        <div class="desc">TikTok profilim</div>
+      </div>
+      <div class="arrow">↗</div>
+    </a>
 
-<section id="hakkimizda" class="card">
-<h2>ℹ️ WORLD_GAMEHUB Nedir?</h2>
-<p>Oyun severler için hazırlanmış bağımsız bir topluluk sayfası. Oyun içerikleri, rehberler ve faydalı bağlantılar burada buluşuyor.</p>
-</section>
+    <a class="social"
+       href="https://telegram.org/"
+       target="_blank" rel="noopener">
+      <div class="symbol">✈</div>
+      <div>
+        <div class="name">Telegram</div>
+        <div class="desc">Telegram hesabım</div>
+      </div>
+      <div class="arrow">↗</div>
+    </a>
 
-<section class="card">
-<h2>🛡️ Güvenlik ve Kurallar</h2>
-<p>Topluluk üyelerine saygılı davran. Şifreni ve kişisel bilgilerini kimseyle paylaşma. Paylaşılan bağlantıları dikkatlice kontrol et.</p>
-</section>
+    <a class="social"
+       href="https://www.reddit.com/"
+       target="_blank" rel="noopener">
+      <div class="symbol">●</div>
+      <div>
+        <div class="name">Reddit</div>
+        <div class="desc">Reddit profilim</div>
+      </div>
+      <div class="arrow">↗</div>
+    </a>
+
+    <a class="social"
+       href="https://www.youtube.com/"
+       target="_blank" rel="noopener">
+      <div class="symbol">▶</div>
+      <div>
+        <div class="name">YouTube</div>
+        <div class="desc">YouTube kanalım</div>
+      </div>
+      <div class="arrow">↗</div>
+    </a>
+
+  </section>
 </main>
 
-<footer>© 2026 WORLD_GAMEHUB · Oyun topluluğu</footer>
+<footer>
+  © 2026 Barisin_Hesaplari
+</footer>
 
-<script>
-let english=false;
-function toggleLang(){
- english=!english;
- document.getElementById('lang').textContent=english?'🇬🇧 English':'🇹🇷 Türkçe';
- document.getElementById('subtitle').textContent=english?
- 'Games, guides and community links':'Oyunlar, scriptler ve topluluk bağlantılarımız';
- document.getElementById('gamesTitle').textContent=english?
- '🎮 Game Sections':'🎮 Oyun Bölümleri';
-}
-</script>
 </body>
 </html>
+1
