@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10071f">
+<title>WORLD_GAMEHUB</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;color:#f5f1ff;
+ font-family:Arial,sans-serif;
+ background:radial-gradient(ellipse at top,#35105c,#0a0b17 65%);
+ min-height:100vh
+}
+header,main,footer{max-width:950px;margin:auto;padding:22px}
+nav{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-weight:900;color:#c9a0ff;font-size:19px}
+a{color:inherit;text-decoration:none}
+button,.btn{
+ background:#241339;border:1px solid #6942a0;
+ border-radius:14px;padding:12px 16px;color:white;
+ font-size:14px;cursor:pointer;display:inline-block
+}
+.hero{text-align:center;padding:55px 0 35px}
+.gamepad{font-size:55px;margin-bottom:12px}
+h1{font-size:clamp(28px,7vw,48px);margin:10px 0}
+.hero p{color:#c3b8d5;line-height:1.7}
+.pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{
+ background:#171426;border:1px solid #38304c;
+ border-radius:20px;padding:20px;margin-bottom:15px
+}
+.card h2{font-size:19px;margin-top:0}
+.card p{color:#bcb4cc;line-height:1.6;font-size:14px}
+.game{display:flex;align-items:center;justify-content:space-between;gap:10px;
+ padding:14px;margin-top:10px;background:#211d31;
+ border-radius:13px;border:1px solid #353047}
+.game span{font-size:14px}
+section{margin-bottom:28px}
+footer{text-align:center;color:#948aa7;font-size:13px;padding-bottom:35px}
+@media(max-width:600px){
+ header,main,footer{padding:17px}
+ .grid{grid-template-columns:1fr}
+ .hero{padding-top:38px}
+}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">🎮 WORLD_GAMEHUB</div>
+<button onclick="toggleLang()" id="lang">🇹🇷 Türkçe</button>
+</nav>
+</header>
+
+<main>
+<div class="hero">
+<div class="gamepad">🎮</div>
+<h1>WORLD_GAMEHUB</h1>
+<p id="subtitle">Oyunlar, scriptler ve topluluk bağlantılarımız</p>
+<div class="pills">
+<a class="btn" href="#oyunlar">🎯 Oyunlar</a>
+<a class="btn" href="#topluluk">🌐 Topluluk</a>
+<a class="btn" href="#hakkimizda">ℹ️ Hakkımızda</a>
+</div>
+</div>
+
+<section id="oyunlar">
+<h2 id="gamesTitle">🎮 Oyun Bölümleri</h2>
+<div class="grid">
+<div class="card">
+<h2>🟥 Roblox</h2>
+<p>Roblox topluluğu, rehberler ve oyun içerikleri.</p>
+<a class="btn" href="#topluluk">İncele ↗</a>
+</div>
+<div class="card">
+<h2>🚘 Car Parking</h2>
+<p>Araçlar, sürüş içerikleri ve oyun rehberleri.</p>
+<a class="btn" href="#topluluk">İncele ↗</a>
+</div>
+<div class="card">
+<h2>⛏️ Minecraft</h2>
+<p>Modlar, sunucular ve hayatta kalma rehberleri.</p>
+<a class="btn" href="#topluluk">İncele ↗</a>
+</div>
+</div>
+</section>
+
+<section id="topluluk" class="card">
+<h2>🌐 Topluluğumuza Katıl</h2>
+<p>Oyun topluluklarımızı ve sosyal medya hesaplarımızı burada bulabilirsin.</p>
+<a class="game" href="https://telegram.org/" target="_blank" rel="noopener">
+<span>✈️ Telegram</span><span>↗</span>
+</a>
+<a class="game" href="https://www.tiktok.com/" target="_blank" rel="noopener">
+<span>🎵 TikTok</span><span>↗</span>
+</a>
+<a class="game" href="https://www.youtube.com/" target="_blank" rel="noopener">
+<span>▶️ YouTube</span><span>↗</span>
+</a>
+<a class="game" href="https://discord.com/" target="_blank" rel="noopener">
+<span>💬 Discord</span><span>↗</span>
+</a>
+</section>
+
+<section id="hakkimizda" class="card">
+<h2>ℹ️ WORLD_GAMEHUB Nedir?</h2>
+<p>Oyun severler için hazırlanmış bağımsız bir topluluk sayfası. Oyun içerikleri, rehberler ve faydalı bağlantılar burada buluşuyor.</p>
+</section>
+
+<section class="card">
+<h2>🛡️ Güvenlik ve Kurallar</h2>
+<p>Topluluk üyelerine saygılı davran. Şifreni ve kişisel bilgilerini kimseyle paylaşma. Paylaşılan bağlantıları dikkatlice kontrol et.</p>
+</section>
+</main>
+
+<footer>© 2026 WORLD_GAMEHUB · Oyun topluluğu</footer>
+
+<script>
+let english=false;
+function toggleLang(){
+ english=!english;
+ document.getElementById('lang').textContent=english?'🇬🇧 English':'🇹🇷 Türkçe';
+ document.getElementById('subtitle').textContent=english?
+ 'Games, guides and community links':'Oyunlar, scriptler ve topluluk bağlantılarımız';
+ document.getElementById('gamesTitle').textContent=english?
+ '🎮 Game Sections':'🎮 Oyun Bölümleri';
+}
+</script>
+</body>
+</html>
